@@ -8,11 +8,15 @@ function versionModulo(nombreModulo, callback){
     console.log(fichero); */
     const fichero=path.join('node_modules', nombreModulo,'package.json');
     console.log(fichero);
+
+    /* Esta funcion es asincrona, por lo tanto el control de errores ha de ser mediante un callback
+    ya que el try catch no podra cazar nunca esos errores ni tan siquiera con un try catch */
     fs.readFile(fichero, 'utf-8', (err, data) => {
         if (err){
             callback(err);
             return;
         }
+
         let packageObject;
         // esta función es sincrona por lo que utilizaremos try catch
         try{
