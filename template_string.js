@@ -12,7 +12,10 @@ const foo = (nombre = '?????', age = 0) => (
 console.log(foo()); 
 
 
-
+/**
+ * Los tres puntos se usan para recoger el resto de parametros.
+ * Cogemos el primer parametro, y después el resto en forma de array. 
+ */
 const fooString = (string, ...arg) => {
     return`
     ${string[0]}
